@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Source: services/steam/steam-base.js</title>
+    <title>JSDoc: Module: core/base-service/base-jsonl</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,74 +17,101 @@
 
 <div id="main">
 
-    <h1 class="page-title">Source: services/steam/steam-base.js</h1>
+    <h1 class="page-title">Module: core/base-service/base-jsonl</h1>
 
     
 
 
 
+
+<section>
+
+<header>
     
-    <section>
-        <article>
-            <pre class="prettyprint source linenums"><code>/**
- * @module
- */
+</header>
 
-import { BaseJsonService } from '../index.js'
+<article>
+    <div class="container-overview">
+    
+        
 
-/**
- * The steam api is based like /{interface}/{method}/v{version}/
- *
- * @see https://partner.steamgames.com/doc/webapi_overview#2
- */
-class BaseSteamAPI extends BaseJsonService {
-  /**
-   * Steam API Interface
-   *
-   * @see https://partner.steamgames.com/doc/webapi_overview#2
-   */
-  static get interf() {
-    throw new Error(`interf() was not implement for ${this.name}`)
-  }
+        
 
-  /**
-   * Steam API Method
-   *
-   * @see https://partner.steamgames.com/doc/webapi_overview#2
-   */
-  static get method() {
-    throw new Error(`method() was not implement for ${this.name}`)
-  }
 
-  /**
-   * Steam API Version
-   *
-   * @see https://partner.steamgames.com/doc/webapi_overview#2
-   */
-  static get version() {
-    throw new Error(`version() was not implement for ${this.name}`)
-  }
+<dl class="details">
 
-  async fetch({ schema, options }) {
-    const interf = this.constructor.interf
-    const method = this.constructor.method
-    const version = this.constructor.version
-    const url = `https://api.steampowered.com/${interf}/${method}/v${version}/?format=json`
-    return this._requestJson({
-      url,
-      schema,
-      httpErrors: {
-        400: 'bad request',
-      },
-      options,
-    })
-  }
-}
+    
 
-export default BaseSteamAPI
-</code></pre>
-        </article>
-    </section>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="core_base-service_base-jsonl.js.html">core/base-service/base-jsonl.js</a>, <a href="core_base-service_base-jsonl.js.html#line1">line 1</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Classes</h3>
+
+        <dl>
+            <dt><a href="module-core_base-service_base-jsonl-BaseJsonlService.html">BaseJsonlService</a></dt>
+            <dd></dd>
+        </dl>
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
 
 
 
