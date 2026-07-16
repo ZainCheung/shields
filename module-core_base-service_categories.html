@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Module: services/build-status</title>
+    <title>JSDoc: Module: core/base-service/categories</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,7 +17,7 @@
 
 <div id="main">
 
-    <h1 class="page-title">Module: services/build-status</h1>
+    <h1 class="page-title">Module: core/base-service/categories</h1>
 
     
 
@@ -34,7 +34,7 @@
     <div class="container-overview">
     
         
-            <div class="description"><p>Common functions and schemas for tasks related to build status.</p></div>
+            <div class="description"><p>Helpers for validating service category identifiers.</p></div>
         
 
         
@@ -69,7 +69,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_build-status.js.html">services/build-status.js</a>, <a href="services_build-status.js.html#line1">line 1</a>
+        <a href="core_base-service_categories.js.html">core/base-service/categories.js</a>, <a href="core_base-service_categories.js.html#line1">line 1</a>
     </li></ul></dd>
     
 
@@ -102,14 +102,14 @@
 
         
             
-<h4 class="name" id="~isBuildStatus"><span class="type-signature">(inner, constant) </span>isBuildStatus<span class="type-signature"> :Joi</span></h4>
+<h4 class="name" id="~isValidCategory"><span class="type-signature">(inner, constant) </span>isValidCategory<span class="type-signature"> :Joi</span></h4>
 
 
 
 
 <div class="description">
-    <p>Joi schema for validating Build Status.
-Checks if the build status is present in the list of allowed build status.</p>
+    <p>Joi validator for service categories registered by Shields, including the
+special <code>debug</code>, <code>dynamic</code>, and <code>static</code> categories.</p>
 </div>
 
 
@@ -157,7 +157,7 @@ Checks if the build status is present in the list of allowed build status.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_build-status.js.html">services/build-status.js</a>, <a href="services_build-status.js.html#line65">line 65</a>
+        <a href="core_base-service_categories.js.html">core/base-service/categories.js</a>, <a href="core_base-service_categories.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -185,7 +185,7 @@ Checks if the build status is present in the list of allowed build status.</p>
     
 
     
-    <h4 class="name" id="~renderBuildStatusBadge"><span class="type-signature">(inner) </span>renderBuildStatusBadge<span class="signature">(attrs)</span><span class="type-signature"> &rarr; {object}</span></h4>
+    <h4 class="name" id="~assertValidCategory"><span class="type-signature">(inner) </span>assertValidCategory<span class="signature">(category, message<span class="signature-attributes">opt</span>)</span><span class="type-signature"> &rarr; {void}</span></h4>
     
 
     
@@ -193,8 +193,7 @@ Checks if the build status is present in the list of allowed build status.</p>
 
 
 <div class="description">
-    <p>Handles rendering concerns of badges that display build status.
-Determines the message and color of the badge according to the build status.</p>
+    <p>Assert that a value is a valid Shields service category.</p>
 </div>
 
 
@@ -207,48 +206,6 @@ Determines the message and color of the badge according to the build status.</p>
 
     <h5>Parameters:</h5>
     
-
-<table class="params">
-    <thead>
-    <tr>
-        
-        <th>Name</th>
-        
-
-        <th>Type</th>
-
-        
-
-        
-
-        <th class="last">Description</th>
-    </tr>
-    </thead>
-
-    <tbody>
-    
-
-        <tr>
-            
-                <td class="name"><code>attrs</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">object</span>
-
-
-            
-            </td>
-
-            
-
-            
-
-            <td class="description last"><p>Refer to individual attributes</p>
-                <h6>Properties</h6>
-                
 
 <table class="params">
     <thead>
@@ -274,7 +231,38 @@ Determines the message and color of the badge according to the build status.</p>
 
         <tr>
             
-                <td class="name"><code>label</code></td>
+                <td class="name"><code>category</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+
+                
+
+                
+                </td>
+            
+
+            
+
+            <td class="description last"><p>Service category identifier to validate.</p></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>message</code></td>
             
 
             <td class="type">
@@ -300,45 +288,7 @@ Determines the message and color of the badge according to the build status.</p>
 
             
 
-            <td class="description last"><p>If provided then badge label is set to this value</p></td>
-        </tr>
-
-    
-
-        <tr>
-            
-                <td class="name"><code>status</code></td>
-            
-
-            <td class="type">
-            
-                
-<span class="param-type">string</span>
-
-
-            
-            </td>
-
-            
-                <td class="attributes">
-                
-
-                
-
-                
-                </td>
-            
-
-            
-
-            <td class="description last"><p>Build status</p></td>
-        </tr>
-
-    
-    </tbody>
-</table>
-
-            </td>
+            <td class="description last"><p>Optional prefix for the validation error.</p></td>
         </tr>
 
     
@@ -379,7 +329,7 @@ Determines the message and color of the badge according to the build status.</p>
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="services_build-status.js.html">services/build-status.js</a>, <a href="services_build-status.js.html#line76">line 76</a>
+        <a href="core_base-service_categories.js.html">core/base-service/categories.js</a>, <a href="core_base-service_categories.js.html#line30">line 30</a>
     </li></ul></dd>
     
 
@@ -402,15 +352,40 @@ Determines the message and color of the badge according to the build status.</p>
 
 
 
+<h5>Throws:</h5>
+
+        
+
+<dl>
+    <dt>
+        <div class="param-desc">
+        <p>When the category is not recognized.</p>
+        </div>
+    </dt>
+    <dd></dd>
+    <dt>
+        <dl>
+            <dt>
+                Type
+            </dt>
+            <dd>
+                
+<span class="param-type">Error</span>
+
+
+            </dd>
+        </dl>
+    </dt>
+    <dd></dd>
+</dl>
+
+
+    
 
 
 <h5>Returns:</h5>
 
         
-<div class="param-desc">
-    <p>Badge with label, message and color properties</p>
-</div>
-
 
 
 <dl>
@@ -419,7 +394,7 @@ Determines the message and color of the badge according to the build status.</p>
     </dt>
     <dd>
         
-<span class="param-type">object</span>
+<span class="param-type">void</span>
 
 
     </dd>
